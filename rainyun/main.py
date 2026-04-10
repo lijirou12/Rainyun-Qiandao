@@ -12,8 +12,12 @@ from threading import Lock
 from typing import Protocol, Sequence
 
 import cv2
-import ddddocr
 import numpy as np
+from .utils.pillow_compat import ensure_antialias_alias
+
+ensure_antialias_alias()
+
+import ddddocr
 from .api.client import RainyunAPI
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver import ActionChains
